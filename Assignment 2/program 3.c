@@ -22,45 +22,49 @@ int main()
     printf("\n%d    %s    %f    %s",customer.AccNumber,customer.CustName,customer.AvlBalance,customer.AccType);
     int x;
     float Withdraw, Deposit;
-    printf("\n\nMenu Options: 1->Withdrawal  2->Deposit  3->Display Balance  4->Exit : ");
-    scanf("%d",&x);
-    
-    if(x==1)
-    { 
-        printf("\nenter the Amount you want to Withdraw: ");
-        scanf("%f",&Withdraw);
-        if(customer.AvlBalance > Withdraw)
+
+    while(x!=4)
         {
-            printf("\n%f has been Withdrawn from your account.",Withdraw);
-            printf("\nRemaining Balance = %f",(customer.AvlBalance-Withdraw));
+            printf("\n\nMenu Options: 1->Withdrawal  2->Deposit  3->Display Balance  4->Exit : ");
+            scanf("%d",&x);
+    
+            if(x==1)
+            {
+                printf("\nenter the Amount you want to Withdraw: ");
+                scanf("%f",&Withdraw);
+                if(customer.AvlBalance > Withdraw)
+                    {
+                        printf("\n%f has been Withdrawn from your account.",Withdraw);
+                        printf("\nRemaining Balance = %f",(customer.AvlBalance-Withdraw));
+                    }
+                else
+                    {
+                        printf("\nNOT enough Balance for Withdrawal!!");
+                    }
+            }
+    
+                else if(x==2)
+                    {
+                        printf("\nenter the Amount you want to Deposit: ");
+                        scanf("%f",&Deposit);
+                        printf("the Available Balance after Deposit : %f",(customer.AvlBalance+Deposit));
+                    }
+    
+                else if(x==3)
+                    {
+                        printf("\n%d    %s    %f    %s",customer.AccNumber,customer.CustName,customer.AvlBalance,customer.AccType);
+                    }
+    
+                else if(x==4)
+                    {
+                        printf("\nyou have successfully EXITED the application...");
+                    }
+    
+                 else
+                    {
+                        printf("\nplease enter a VALID number from the MENU options!!!");
+                    }
         }
-        else
-        {
-            printf("\nNOT enough Balance for Withdrawal!!");
-        }
-    }
-    
-    else if(x==2)
-    {
-        printf("\nenter the Amount you want to Deposit: ");
-        scanf("%f",&Deposit);
-        printf("the Available Balance after Deposit : %f",(customer.AvlBalance+Deposit));
-    }
-    
-    else if(x==3)
-    {
-        printf("\n%d    %s    %f    %s",customer.AccNumber,customer.CustName,customer.AvlBalance,customer.AccType);
-    }
-    
-    else if(x==4)
-    {
-        printf("\nyou have successfully EXITED the application...");
-    }
-    
-    else
-    {
-        printf("\nplease enter a VALID number from the MENU options!!!");
-    }
     
     return 0;
 }
