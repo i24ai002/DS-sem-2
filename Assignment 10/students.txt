@@ -1,0 +1,10 @@
+Ram, 101, CSE
+Shyam, 102, ECE
+Gopal, 103, ME
+Neel, 104, AI
+Aditya, 105, CSE
+Bob, 106, CSE
+Eve, 107, EE
+Ram, 108, AI
+Charlie, 109, ME
+Neel, 110, CE
