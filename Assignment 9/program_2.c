@@ -1,3 +1,4 @@
+//time complexity O(n logn)
 #include <stdio.h>
 
 // Function to merge two halves of an array
